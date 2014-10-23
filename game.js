@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('myApp',[])
+angular.module('myApp',['ngDraggable'])
   .controller('Ctrl', function (
       $window, $scope, $log, $timeout,
-      gameService, scaleBodyService, gameLogic) {
+      gameService, gameLogic) {
     
     
     //Globals to detect 2 clicks then make move
@@ -19,6 +19,12 @@ angular.module('myApp',[])
       gameService.makeMove(
           gameLogic.createComputerMove($scope.jsonState,$scope.turnIndex));
     }
+    
+    $scope.onDropComplete = function (data, event, rowData, colData) {
+        $log.info("onDropComplete happened!", arguments);
+        $scope.notifications = "Dropped piece " + data + " in " + rowData + "x" + colData;
+        $scope.cellClicked(rowData, colData);
+      };
     
    	$scope.isPawn = function(row,col,pawn){
     	if($scope.board[row][col]===pawn){
@@ -132,7 +138,7 @@ angular.module('myApp',[])
       }
     };
     
-    scaleBodyService.scaleBody({width: 152, height: 152});   
+//     scaleBodyService.scaleBody({width: 152, height: 152});   
     
     gameService.setGame({
       gameDeveloperEmail: "prakhar05@gmail.com",
