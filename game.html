@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html manifest="game.appcache" lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,27 +14,30 @@
   <script src="http://yoav-zibin.github.io/emulator/gameService.js"></script>
   <script src="http://yoav-zibin.github.io/emulator/messageService.js"></script>
   <script src="http://yoav-zibin.github.io/emulator/stateService.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 <body ng-controller="Ctrl" ng-class="{body:true}">
 <table>
     <tr ng-repeat="row in board track by $index">
       <td ng-repeat="cell in row track by $index"
-          ng-class="{cell:true, 
-        		   	 o:$parent.$index%2===$index%2, 
+          ng-class="{cell:true,
+        		   	 o:$parent.$index%2===$index%2,
         		   	 e:$parent.$index%2!==$index%2
         		   	}"
           ng-drop="true"
           ng-drop-success="onDropComplete($data,$event,$parent.$index,$index)"
           ng-click="cellClicked($parent.$index, $index)">
       <div ng-class="{pawnW:true, pawnWselect:isWTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="isWTurn()" ng-drag-data="1" 
+      	   ng-drag="isWTurn()"
+           ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
       	   ng-show="isPawn($parent.$index,$index,'A')"></div>
       <div ng-class="{pawnB:true, pawnWselect:isBTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="isBTurn()" ng-drag-data="2"  
+      	   ng-drag="isBTurn()"
+           ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
       	   ng-show="isPawn($parent.$index,$index,'B')"></div>
-      <div ng-class="{arrow:true}" ng-show="isPawn($parent.$index,$index,'X')"></div>
+      <div ng-class="{arrow:true}"
+           ng-show="isPawn($parent.$index,$index,'X')"></div>
       </td>
     </tr>
 </table>
