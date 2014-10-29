@@ -97,7 +97,8 @@ angular.module('myApp').service('gameLogic', function () {
     	newTurnInfo = turnInfo,
         pp = pawnPosition,
         pd = pawnDelta,
-        winner;
+        winner,
+        result;
 
 
     var boardAfterMove = copyObject(board);
@@ -140,9 +141,10 @@ angular.module('myApp').service('gameLogic', function () {
       }
       else
       {
+        result = {endMatch: {endMatchScores:(winner === 'A' ? [1, 0] : (winner === 'B' ? [0, 1] : [0, 0]))}};
         newTurnInfo = {ctr:'',pawn:''};
-        return [{endMatch:{key:'WinnerIs',value:winner}},
-            {set: {key: 'turnInfo', value: newTurnInfo}},
+        return [result,
+                {set: {key: 'turnInfo', value: newTurnInfo}},
                 {set: {key: 'pawnPosition', value :{row:pp.row, col:pp.col}}},
                 {set: {key: 'pawnDelta', value :{row:pd.row, col:pd.col}}},
                 {set: {key: 'board', value: boardAfterMove}}];
