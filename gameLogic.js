@@ -140,14 +140,19 @@ angular.module('myApp').service('gameLogic', function () {
       }
       else
       {
-        newTurn = {GameOver : {WinnerIs : winner}};
         newTurnInfo = {ctr:'',pawn:''};
+        return [{endMatch:{key:'WinnerIs',value:winner}},
+            {set: {key: 'turnInfo', value: newTurnInfo}},
+                {set: {key: 'pawnPosition', value :{row:pp.row, col:pp.col}}},
+                {set: {key: 'pawnDelta', value :{row:pd.row, col:pd.col}}},
+                {set: {key: 'board', value: boardAfterMove}}];
       }
     }
     else
     {
       newTurnInfo.ctr = 1;newTurnInfo.pawn = 'X';		//ctr was 2 so make it 1 and change pawn name,player remains same
     }
+
 
     return [{setTurn:newTurn},
     		{set: {key: 'turnInfo', value: newTurnInfo}},
