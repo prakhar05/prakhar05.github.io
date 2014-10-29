@@ -11,6 +11,7 @@ angular.module('myApp',['ngDraggable'])
     var pawnDelta = {row:'',col:''};
     var lastSelected = {row:'', col:''};
     var movCtr = 2;
+    var moveType = 2;
       
     var sound = new Audio("audio/move.wav");
     sound.load();
@@ -122,13 +123,18 @@ angular.module('myApp',['ngDraggable'])
        	{
 			var move = gameLogic.createMove(pawnPosition, pawnDelta, $scope.turnIndex,
 			$scope.jsonState);
-        	
+        	moveType +=1;
         	$scope.isYourTurn = false; // to prevent making another move
         	lastSelected = {row:pawnDelta.row,col:pawnDelta.col};
-        	pawnPosition = {row:'',col:''}; //reset pawnPosition,pawnDelta and movCtr
-        	pawnDelta = {row:'',col:''};
-        	movCtr=2;						
-        	gameService.makeMove(move);
+        	if(moveType%2!==0 ){
+        	pawnPosition = {row:pawnDelta.row,col:pawnDelta.col};
+        	movCtr=1;
+        	}else
+        	{pawnPosition = {row:'',col:''};
+        	movCtr=2
+        	}
+        	pawnDelta = {row:'',col:''};	
+        	gameService.makeMove(move);			
 		} 
       	catch (e) 
       	{

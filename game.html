@@ -29,10 +29,10 @@
           ng-drop-success="onDropComplete($data,$event,$parent.$index,$index)"
           ng-click="cellClicked($parent.$index, $index)">
       <div ng-class="{pawnW:true, pawnWselect:isWTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="true" ng-drag-data="1" 
+      	   ng-drag="isWTurn()" ng-drag-data="1" 
       	   ng-show="isPawn($parent.$index,$index,'A')"></div>
       <div ng-class="{pawnB:true, pawnWselect:isBTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="true" ng-drag-data="2"  
+      	   ng-drag="isBTurn()" ng-drag-data="2"  
       	   ng-show="isPawn($parent.$index,$index,'B')"></div>
       <div ng-class="{arrow:true}" ng-show="isPawn($parent.$index,$index,'X')"></div>
       </td>

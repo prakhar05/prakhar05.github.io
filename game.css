@@ -1,5 +1,4 @@
 body {
-  background: url('img/bck.jpg'); 
   margin: 0px;
   padding: 0px;
   border:none;
@@ -14,7 +13,7 @@ table {
   width : 600 px;
   height : 600 px;
 }
-	
+
 .cell {
   font-size: 8pt;
   width: 60px;
@@ -24,13 +23,13 @@ table {
   padding: 0px;
   position : relative;
   background : #663300;
-  z-index:1;
+/*   z-index:1; */
 }
 
 .o {
   background-image: url('img/tile.jpg');
   background-size: 60px 60px;
-  
+
 }
 
 .e {
@@ -44,20 +43,20 @@ table {
   width:40px;
   left: 9px;
   position: relative;
-  z-index:200;
+/*   z-index:200; */
 /*   cursor:pointer; */
-} 
+}
 
 .pawnWselect{
 	transition: outline 1ms linear 1ms;
   	-webkit-transition: outline 1ms linear 1ms;
-  	z-index:200;
+/*   	z-index:200; */
 }
 
 .pawnWselect:hover{
 	outline: #7A2900 solid 4pt;
 	cursor:pointer;
-	z-index:200;
+/* 	z-index:200; */
 }
 
 .pawnB{
@@ -66,19 +65,19 @@ table {
   width:40px;
   left : 9px;
   position: relative;
-  z-index:200;
-} 
+/*   z-index:200; */
+}
 
 .pawnBselect{
 	transition: outline 1ms linear 1ms;
   	-webkit-transition: outline 1ms linear 1ms;
-  	z-index:200;
+/*   	z-index:200; */
 }
 
 .pawnBselect:hover{
 	outline: #7A2900 solid 4pt;
 	cursor:pointer;
-	z-index:200;
+/* 	z-index:200; */
 }
 
 .arrow{
@@ -88,8 +87,8 @@ table {
   left: 9px;
   bottom: 9px;
   position: absolute;
-  z-index:2;
-} 
+/*   z-index:2; */
+}
 
 .pawnTurn{
 	outline: #7A2900 solid 4pt;
@@ -97,7 +96,7 @@ table {
 
 
 
-/* 
+/*
 .pawnW:hover{
   outline: #7A2900 solid 1pt;
 }
