@@ -143,6 +143,8 @@ angular.module('myApp').service('gameLogic', function () {
       {
         result = {endMatch: {endMatchScores:(winner === 'A' ? [1, 0] : (winner === 'B' ? [0, 1] : [0, 0]))}};
         newTurnInfo = {ctr:'',pawn:''};
+        var winnerstring = (winner === 'A' ? 'Game Over! White player wins' : 'Game over! Black Player wins');
+        window.alert(winnerstring);
         return [result,
                 {set: {key: 'turnInfo', value: newTurnInfo}},
                 {set: {key: 'pawnPosition', value :{row:pp.row, col:pp.col}}},
