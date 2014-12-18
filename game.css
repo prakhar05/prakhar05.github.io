@@ -33,7 +33,7 @@ table {
 }
 
 .e {
-  background : #FFFFFF;
+  background-image : url('img/tile2.jpg');
   background-size: 60px 60px;
 }
 
@@ -81,13 +81,25 @@ table {
 }
 
 .arrow{
-  content: url("img/occupy.png");
+  content: url("img/stop3.png");
   height:41px;
   width: 41px;
   left: 9px;
   bottom: 9px;
   position: absolute;
+  -webkit-animation: mymove 1s; /* Chrome, Safari, Opera */
+  animation: mymove 1s;
 /*   z-index:2; */
+}
+
+@keyframes mymove{
+  from {height:10px;width: 10px;left: 25px;bottom: 25px;}
+  to {height:41px;width: 41px;left: 9px;bottom: 9px;}
+}
+
+@-webkit-keyframes mymove {
+  from {height:10px;width: 10px;left: 25px;bottom: 25px;}
+  to {height:41px;width: 41px;left: 9px;bottom: 9px;}
 }
 
 .pawnTurn{

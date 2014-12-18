@@ -119,7 +119,14 @@ angular.module('myApp',['ngDraggable'])
           	movCtr-=1;
            }
         else
-        	{pawnDelta.row = '';pawnDelta.col = '';}
+        	{
+        	pawnDelta.row = '';pawnDelta.col = '';
+          if(moveType%2===0)
+            {
+              pawnPosition.row= '';pawnPosition.col = '';
+              movCtr=2;
+            }
+        	}
       }
 
 

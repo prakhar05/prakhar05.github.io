@@ -581,17 +581,23 @@ angular.module('myApp').service('gameLogic', function () {
   		index+=1;
   	}
 
-  	if(turnInfo.ctr===2){
-  	var pawnNumber = Math.floor((Math.random()*4)+1);	//get number between 1 and 4
-  	}
-  	else{
-  	pawnNumber = 1;
-  	}
-    pawnPosition = pawnPosList[pawnNumber-1];			   //get pawn Position of that pawn
-  	var listLen = pawnDelList[pawnNumber].length;    // get length of array of that pawns possible moves
-  	var pawnDelNumber = Math.floor((Math.random()*listLen)); // generate a random number between 0 and length from prev step
-  	var tempArray = pawnDelList[pawnNumber];				//extract the array from the main list
-  	pawnDelta = tempArray[pawnDelNumber];				//get delta position at random index using pawnDelNumber
+    var pawnNumber, listLen, pawnDelNumber, tempArray;
+    while(1){
+            if(turnInfo.ctr===2){
+  	             pawnNumber = Math.floor((Math.random()*4)+1);	//get number between 1 and 4
+  	        }
+  	        else{
+  	             pawnNumber = 1;
+            }
+            pawnPosition = pawnPosList[pawnNumber-1];			    //get pawn Position of that pawn
+  	        listLen = pawnDelList[pawnNumber].length;     //get length of array of that pawns possible moves
+            if (listLen !== 0)
+              break;
+    }
+
+    pawnDelNumber = Math.floor((Math.random()*listLen)); // generate a random number between 0 and length from prev step
+  	tempArray = pawnDelList[pawnNumber];				//extract the array from the main list
+  	pawnDelta = tempArray[pawnDelNumber];				    //get delta position at random index using pawnDelNumber
 
   	console.log(pawnPosition,pawnDelta);
   	var randomMove = createMove(pawnPosition,pawnDelta,turnIndexBeforeMove,stateBeforeMove);
