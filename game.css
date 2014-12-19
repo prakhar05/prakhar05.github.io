@@ -89,8 +89,8 @@ table {
   left: 9px;
   bottom: 9px;
   position: absolute;
-  -webkit-animation: mymove 1s; /* Chrome, Safari, Opera */
-  animation: mymove 1s;
+  -webkit-animation: mymove 10ms; /* Chrome, Safari, Opera */
+  animation: mymove 10ms;
 /*   z-index:2; */
 }
 
