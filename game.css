@@ -33,7 +33,8 @@ table {
 }
 
 .e {
-  background-image : url('img/tile2.jpg');
+  /*background-image : url('img/tile2.jpg');*/
+  background : #FFFFFF;
   background-size: 60px 60px;
 }
 
