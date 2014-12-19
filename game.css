@@ -27,15 +27,13 @@ table {
 }
 
 .o {
-  /*background-image: url('img/tile.jpg');*/
-  background : #D8F781
+  background-image: url('img/tile.jpg');
   background-size: 60px 60px;
 
 }
 
 .e {
-  /*background-image : url('img/tile2.jpg');*/
-  background : #FFFFFF;
+  background-image : url('img/tile2.jpg');
   background-size: 60px 60px;
 }
 
