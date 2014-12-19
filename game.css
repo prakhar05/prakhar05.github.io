@@ -27,7 +27,8 @@ table {
 }
 
 .o {
-  background-image: url('img/tile.jpg');
+  /*background-image: url('img/tile.jpg');*/
+  background : #D8F781
   background-size: 60px 60px;
 
 }
