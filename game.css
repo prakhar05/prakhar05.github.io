@@ -22,8 +22,7 @@ table {
   margin: 0px;
   padding: 0px;
   position : relative;
-  background : #663300;
-/*   z-index:1; */
+
 }
 
 .o {
@@ -33,7 +32,6 @@ table {
 }
 
 .e {
-  background-image : url('img/tile2.jpg');
   background-size: 60px 60px;
 }
 
@@ -43,20 +41,19 @@ table {
   width:40px;
   left: 9px;
   position: relative;
-/*   z-index:200; */
-/*   cursor:pointer; */
+
 }
 
 .pawnWselect{
 	transition: outline 1ms linear 1ms;
   	-webkit-transition: outline 1ms linear 1ms;
-/*   	z-index:200; */
+
 }
 
 .pawnWselect:hover{
 	outline: #7A2900 solid 4pt;
 	cursor:pointer;
-/* 	z-index:200; */
+
 }
 
 .pawnB{
@@ -65,34 +62,34 @@ table {
   width:40px;
   left : 9px;
   position: relative;
-/*   z-index:200; */
+
 }
 
 .pawnBselect{
 	transition: outline 1ms linear 1ms;
   	-webkit-transition: outline 1ms linear 1ms;
-/*   	z-index:200; */
+
 }
 
 .pawnBselect:hover{
 	outline: #7A2900 solid 4pt;
 	cursor:pointer;
-/* 	z-index:200; */
+
 }
 
 .arrow{
-  content: url("img/stop.png");
+  content: url("img/occupy.png");
   height:41px;
   width: 41px;
   left: 9px;
   bottom: 9px;
   position: absolute;
-  -webkit-animation: mymove 10ms; /* Chrome, Safari, Opera */
-  animation: mymove 10ms;
-/*   z-index:2; */
+  /*-webkit-animation: mymove 10ms; /* Chrome, Safari, Opera */
+  /*animation: mymove 10ms;*/
+
 }
 
-@keyframes mymove{
+/*@keyframes mymove{
   from {height:10px;width: 10px;left: 25px;bottom: 25px;}
   to {height:41px;width: 41px;left: 9px;bottom: 9px;}
 }
@@ -100,30 +97,8 @@ table {
 @-webkit-keyframes mymove {
   from {height:10px;width: 10px;left: 25px;bottom: 25px;}
   to {height:41px;width: 41px;left: 9px;bottom: 9px;}
-}
+}*/
 
 .pawnTurn{
 	outline: #7A2900 solid 4pt;
 }
-
-
-
-/*
-.pawnW:hover{
-  outline: #7A2900 solid 1pt;
-}
-
-.pawnB:hover{
-  outline: #7A2900 solid 1pt;
-}
- */
-
-/*
-.r {
-  border-right: 1pt solid black;
-}
-.b {
-  border-bottom: 1pt solid black;
-}
-
-*/

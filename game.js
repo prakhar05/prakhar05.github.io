@@ -87,7 +87,7 @@ angular.module('myApp',['ngDraggable'])
       if ($scope.isYourTurn
           && params.playersInfo[params.yourPlayerIndex].playerId === '') {
         // Wait 500 milliseconds until animation ends.
-        $timeout(sendComputerMove, 1000);
+        $timeout(sendComputerMove, 500);
       }
     }
 
