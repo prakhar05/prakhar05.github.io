@@ -35,8 +35,19 @@ angular.module('myApp',['ngDraggable'])
 
      $scope.isPawn = function(row,col,pawn){
     	if($scope.board[row][col]===pawn){
-    		return true;
-    	}
+    		return true;}
+    }
+
+    $scope.isNotPawn = function(row,col){
+      if($scope.board[row][col]==='A' ||
+        $scope.board[row][col]==='B' ||
+        $scope.board[row][col]==='X'){
+        $log.info("is pawn", $scope.board[row][col]);
+        return false;
+      }
+      else
+        $log.info("is not pawn", $scope.board[row][col]);
+        return true;
     }
 
     $scope.isWTurn = function(){

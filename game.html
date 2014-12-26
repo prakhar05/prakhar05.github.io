@@ -17,27 +17,27 @@
 
   <link rel="stylesheet" type="text/css" href="game.css">
 </head>
-<body ng-controller="Ctrl" ng-class="{body:true}">
-<table>
+<body ng-controller="Ctrl">
+<table ng-class='{table:true}'>
     <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9]">
       <td ng-repeat="cell in [0,1,2,3,4,5,6,7,8,9]"
-          ng-class="{cell:true,
+          ng-class="{cell:isNotPawn($parent.$index,$index),
         		   	 o:$parent.$index%2===$index%2,
         		   	 e:$parent.$index%2!==$index%2
         		   	}"
           ng-drop="true"
           ng-drop-success="onDropComplete($data,$event,$parent.$index,$index)"
           ng-click="cellClicked($parent.$index, $index)">
-      <div ng-class="{pawnW:true, pawnWselect:isWTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="isWTurn()"
-           ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
-      	   ng-show="isPawn($parent.$index,$index,'A')"></div>
-      <div ng-class="{pawnB:true, pawnWselect:isBTurn(), pawnTurn:isSelected($parent.$index, $index)}"
-      	   ng-drag="isBTurn()"
-           ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
-      	   ng-show="isPawn($parent.$index,$index,'B')"></div>
-      <div ng-class="{arrow:true}"
-           ng-show="isPawn($parent.$index,$index,'X')"></div>
+          <div ng-class="{pawnW:true, pawnWselect:isWTurn(), pawnTurn:isSelected($parent.$index, $index)}"
+      	    ng-drag="isWTurn()"
+            ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
+      	    ng-show="isPawn($parent.$index,$index,'A')"></div>
+          <div ng-class="{pawnB:true, pawnWselect:isBTurn(), pawnTurn:isSelected($parent.$index, $index)}"
+      	    ng-drag="isBTurn()"
+            ng-drag-success="onDrag($data,$event,$parent.$index,$index)"
+      	    ng-show="isPawn($parent.$index,$index,'B')"></div>
+          <div ng-class="{arrow:true}"
+            ng-show="isPawn($parent.$index,$index,'X')"></div>
       </td>
     </tr>
 </table>

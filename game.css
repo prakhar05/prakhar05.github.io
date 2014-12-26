@@ -2,103 +2,89 @@ body {
   margin: 0px;
   padding: 0px;
   border:none;
-  width : 100%;
-  height: 100%;
+  max-height: 100%;
 }
 
 
-table {
+.table {
   border-collapse: collapse;
   border : 4px solid #2B0E00;
-  width : 600 px;
-  height : 600 px;
 }
 
 .cell {
-  font-size: 8pt;
-  width: 60px;
-  height: 60px;
-  border : none;
-  margin: 0px;
-  padding: 0px;
-  position : relative;
-
+  position: relative;
+  width: 10%;
+  padding-bottom: 10%;
 }
 
 .o {
-  background-image: url('img/tile.jpg');
-  background-size: 60px 60px;
-
+  background-image: url('img/tile3.jpg');
 }
 
 .e {
-  background-size: 60px 60px;
+  background-image: url('img/tile2.jpg');
 }
 
 .pawnW{
-  content: url("img/QW.png");
-  height: 40px;
-  width:40px;
-  left: 9px;
   position: relative;
-
+  content: url("img/QW.png");
+  max-width: 100%;
+  padding-bottom:0%;
 }
 
 .pawnWselect{
-	transition: outline 1ms linear 1ms;
-  	-webkit-transition: outline 1ms linear 1ms;
+    filter: opacity(100%);
+    -webkit-filter: opacity(100%);
 
 }
 
 .pawnWselect:hover{
-	outline: #7A2900 solid 4pt;
 	cursor:pointer;
+  filter: opacity(30%);
+  -webkit-filter: opacity(30%);
 
 }
 
 .pawnB{
-  content: url("img/QB.png");
-  height: 40px;
-  width:40px;
-  left : 9px;
   position: relative;
+  content: url("img/QB.png");
+  max-width: 100%;
+  padding-bottom:0%;
 
 }
 
 .pawnBselect{
-	transition: outline 1ms linear 1ms;
-  	-webkit-transition: outline 1ms linear 1ms;
+  filter: opacity(100%);
+  -webkit-filter: opacity(100%);
 
 }
 
 .pawnBselect:hover{
-	outline: #7A2900 solid 4pt;
-	cursor:pointer;
-
+  cursor:pointer;
+  filter: opacity(30%);
+  -webkit-filter: opacity(30%);
 }
 
 .arrow{
-  content: url("img/occupy.png");
-  height:41px;
-  width: 41px;
-  left: 9px;
-  bottom: 9px;
-  position: absolute;
-  /*-webkit-animation: mymove 10ms; /* Chrome, Safari, Opera */
-  /*animation: mymove 10ms;*/
+  content: url("img/stop.png");
+  max-width: 60%;
+  padding-left: 20%;
+  -webkit-animation: mymove 300ms; /* Chrome, Safari, Opera */
+  animation: mymove 300ms;
 
 }
 
-/*@keyframes mymove{
-  from {height:10px;width: 10px;left: 25px;bottom: 25px;}
-  to {height:41px;width: 41px;left: 9px;bottom: 9px;}
+@keyframes mymove{
+  from {max-width: 10%; padding-left: 20%;}
+  to {max-width: 60%; padding-left: 20%;}
 }
 
 @-webkit-keyframes mymove {
-  from {height:10px;width: 10px;left: 25px;bottom: 25px;}
-  to {height:41px;width: 41px;left: 9px;bottom: 9px;}
-}*/
+  from {max-width: 10%; padding-left: 20%;}
+  to {max-width: 60%; padding-left: 20%;}
+}
 
 .pawnTurn{
-	outline: #7A2900 solid 4pt;
+  filter: opacity(30%);
+  -webkit-filter: opacity(30%);
 }
