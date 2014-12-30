@@ -9,6 +9,7 @@ body {
 .table {
   border-collapse: collapse;
   border : 4px solid #2B0E00;
+  padding: 0;
 }
 
 .cell {
@@ -18,7 +19,7 @@ body {
 }
 
 .o {
-  background-image: url('img/tile3.jpg');
+  background-image: url('img/rsz_tile3.jpg');
 }
 
 .e {
