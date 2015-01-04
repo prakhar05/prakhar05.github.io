@@ -34,8 +34,8 @@ body {
 }
 
 .pawnWselect{
-    filter: opacity(100%);
-    -webkit-filter: opacity(100%);
+    /*filter: opacity(100%);
+    -webkit-filter: opacity(100%);*/
 
 }
 
@@ -55,8 +55,8 @@ body {
 }
 
 .pawnBselect{
-  filter: opacity(100%);
-  -webkit-filter: opacity(100%);
+  /*filter: opacity(100%);
+  -webkit-filter: opacity(100%);*/
 
 }
 

@@ -42,11 +42,9 @@ angular.module('myApp',['ngDraggable'])
       if($scope.board[row][col]==='A' ||
         $scope.board[row][col]==='B' ||
         $scope.board[row][col]==='X'){
-        $log.info("is pawn", $scope.board[row][col]);
         return false;
       }
       else
-        $log.info("is not pawn", $scope.board[row][col]);
         return true;
     }
 
@@ -98,7 +96,7 @@ angular.module('myApp',['ngDraggable'])
       if ($scope.isYourTurn
           && params.playersInfo[params.yourPlayerIndex].playerId === '') {
         // Wait 500 milliseconds until animation ends.
-        $timeout(sendComputerMove, 500);
+        $timeout(sendComputerMove, 1000);
       }
     }
 
